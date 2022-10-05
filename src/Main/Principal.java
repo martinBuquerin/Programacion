@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package Main;
+import Enumeracion.Colores;
 import Enumeracion.Dias;
+import Enumeracion.Continentes;
 import java.util.Scanner;
 
 /**
@@ -20,12 +22,24 @@ public class Principal {
     public static void main(String[] args) {
       
        
-        System.out.print("¿Cual es el dia de hoy?");
-        String hoy = ent.nextLine().toUpperCase();
-         
-            imprimir(hoy);
-
+       // System.out.print("¿Cual es el dia de hoy?");
+        //String hoy = ent.nextLine().toUpperCase();
+       
+        //imprimir(hoy);
         
+         Continentes cont[] = Continentes.values();
+         
+         for(Continentes c: cont){
+             System.out.print(c +" "+ c.cantidadPais());
+             System.out.println();
+         }
+
+         
+         Colores color[] = Colores.values();
+         
+         for(Colores c: color){
+             System.out.println("Color: "+ c +" "+" Intensidad: "+ c.getIntensidad()+" Luminosidad: "+c.getLuminosidad()+" Matiz: "+ c.getMatiz());
+         }
 
          
          
@@ -33,7 +47,7 @@ public class Principal {
      
      
      public static void imprimir(String hoy){
-         Dias day = Dias.valueOf(hoy);
+         Dias day = Dias.valueOf(hoy);//creo la variable Day tipo Dias y convierto el string hoy a un valor de tipo Dias
          
          switch(day){
                 case LUNES:
